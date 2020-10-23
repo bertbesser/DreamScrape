@@ -18,6 +18,8 @@ Thumbs.db
 *.cache
 *.log
 
-
 # Node Files #
 node_modules
+
+# IDE #
+.idea/
