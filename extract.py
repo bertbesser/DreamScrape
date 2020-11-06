@@ -7,14 +7,14 @@ from collections import OrderedDict
 BASE_URL = "http://dreambank.net/random_sample.cgi"
 DREAMBANK = "%s?series={0}&min=1&max=100000&n=" % BASE_URL # n= loads all dreams in series
 
-NUMBER_RE = r'^\#(\S+)'
+NUMBER_RE = r'^\#\(?(\S+)\)?'
 
 HEAD_RE = r'^\((.+?)\)(\w)'
 
 def process_dream_span(span):
-    text = span.text.encode('utf-8').strip()
+    text = span.text.strip()
     # remove number
-    number_groups = re.match(NUMBER_RE,  text)
+    number_groups = re.match(NUMBER_RE, text)
     if number_groups == None:
         raise Exception("ParseException")
 
@@ -46,8 +46,7 @@ def process_dream_span(span):
 def process_dream_page(text):
     soup = BeautifulSoup(text, 'html.parser')
     dreams = soup.find_all('span')
-
-    for dream in soup.find_all('span'):
+    for dream in dreams:
         try:
             data = process_dream_span(dream)
             if data is not None:
