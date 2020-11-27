@@ -4,6 +4,7 @@ import requests
 import json
 from bs4 import BeautifulSoup
 from collections import OrderedDict
+import sys
 
 BASE_URL = "http://dreambank.net/random_sample.cgi"
 DREAMBANK = "%s?series={0}&min=1&max=100000&n=" % BASE_URL # n= loads all dreams in series
@@ -83,7 +84,12 @@ def load_dreamers():
     dreamers = filter(lambda dreamer: dreamer[0] != "" and dreamer[0] is not None, dreamers)
     return dict(dreamers)
 
-DREAMERS=load_dreamers()
+if len(sys.argv) <= 1:
+  DREAMERS=load_dreamers()
+elif sys.argv[1] == "all":
+  DREAMERS=load_dreamers()
+else:
+  DREAMERS=dict(map(lambda dreamer: (dreamer, "no-desc"), sys.argv[1].split(",")))
 
 if DREAMERS is not None:
     for dreamer, desc in DREAMERS.items():
