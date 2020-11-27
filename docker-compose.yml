@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+  dreamscrape:
+    image: dreamscrape
+    build:
+      context: .
