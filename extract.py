@@ -1,3 +1,4 @@
+import codecs
 import re
 import requests
 import json
@@ -89,5 +90,5 @@ if DREAMERS is not None:
         print("collecting dreams for dreamer %s" % dreamer)
         dreams = collect_dreams(dreamer, desc)
         if dreams is not None:
-            with open('dreams/' + dreamer + '.json', 'w') as out_file:
+            with codecs.open('dreams/' + dreamer + '.json', 'w', encoding='utf-8') as out_file:
                 json.dump(dreams, out_file, sort_keys=False, indent=4, ensure_ascii=False)
