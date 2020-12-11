@@ -5,7 +5,8 @@ on:
 
 jobs:
   scrape:
-    runs-on: bertbesser/dreamscrape/scrape:latest
+    runs-on: ubuntu-latest
+    container: bertbesser/dreamscrape/scrape:latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
