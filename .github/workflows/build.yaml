@@ -17,4 +17,4 @@ jobs:
           repository: bertbesser/dreamscrape-scrape
           tag_with_ref: true
           push: true
-
+          tag: bertbesser/dreamscrape-scrape:latest
