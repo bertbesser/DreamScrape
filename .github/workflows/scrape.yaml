@@ -1,10 +1,10 @@
-name: "scrape all"
+name: "scrape"
 
 on:
   workflow_dispatch:
 
 jobs:
-  build:
+  scrape:
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
