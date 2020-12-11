@@ -7,7 +7,7 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/bertbesser/dreamscrape/scrape:latest
+      image: ghcr.io/bertbesser/dreamscrape-scrape:latest
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}

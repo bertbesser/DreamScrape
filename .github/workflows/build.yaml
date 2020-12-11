@@ -13,6 +13,6 @@ jobs:
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: bertbesser/dreamscrape/scrape
+          registry: ghcr.io
+          repository: bertbesser/dreamscrape-scrape
           tag_with_ref: true
