@@ -1,9 +1,12 @@
-name: scrape dreams
+
+name: "scrape dreams"
 
 on:
+
+  workflow_dispatch:
+
   schedule:
     - cron: '0 1 * * *'
-  workflow_dispatch:
 
 jobs:
   scrape:
